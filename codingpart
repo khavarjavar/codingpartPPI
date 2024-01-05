@@ -1,0 +1,281 @@
+/*
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct {
+    char name[21];
+    int solved_problems;
+    int penalty_time;
+    int team_number;
+} Team;
+
+// Function to compare teams for qsort
+int compareTeams(const void *a, const void *b) {
+    const Team *teamA = (const Team *)a;
+    const Team *teamB = (const Team *)b;
+
+    // Sort by solved problems in descending order
+    if (teamB->solved_problems != teamA->solved_problems) {
+        return teamB->solved_problems - teamA->solved_problems;
+    }
+
+    // If solved problems are equal, sort by penalty time in ascending order
+    if (teamA->penalty_time != teamB->penalty_time) {
+        return teamA->penalty_time - teamB->penalty_time;
+    }
+
+    // If both are equal, sort by team number in ascending order
+    return teamA->team_number - teamB->team_number;
+}
+
+int main() {
+    freopen("C:\\Users\\ASUS\\Downloads\\input(42) (1).txt","r",stdin);
+    int n;
+    scanf("%d", &n);
+
+    Team *teams = (Team *)malloc(n * sizeof(Team));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %d %d", teams[i].name, &teams[i].solved_problems, &teams[i].penalty_time);
+        teams[i].team_number = i + 1; // Assign team number
+    }
+
+    // Sort the teams using qsort and the compareTeams function
+    qsort(teams, n, sizeof(Team), compareTeams);
+
+    // Print the number of solved problems for the 661-th team (index 660)
+    printf("%d\n", teams[660].solved_problems);
+
+    // Free allocated memory
+    free(teams);
+
+    return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char name[21];
+    char surname[21];
+    int year_of_birth;
+} Person;
+
+// Function to compare people for qsort
+int comparePeople(const void *a, const void *b) {
+    const Person *personA = (const Person *)a;
+    const Person *personB = (const Person *)b;
+
+    // Compare by surname lexicographically
+    int surnameComparison = strcmp(personA->surname, personB->surname);
+    if (surnameComparison != 0) {
+        return surnameComparison;
+    }
+
+    // If surname is the same, compare by name lexicographically
+    int nameComparison = strcmp(personA->name, personB->name);
+    if (nameComparison != 0) {
+        return nameComparison;
+    }
+
+    // If both surname and name are the same, sort by year of birth in descending order
+    return personB->year_of_birth - personA->year_of_birth;
+}
+
+int main() {
+        freopen("C:\\Users\\ASUS\\Downloads\\input(41).txt","r",stdin);
+
+    int n;
+    scanf("%d", &n);
+
+    Person *people = (Person *)malloc(n * sizeof(Person));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %s %d", people[i].name, people[i].surname, &people[i].year_of_birth);
+    }
+
+    // Sort the people using qsort and the comparePeople function
+    qsort(people, n, sizeof(Person), comparePeople);
+
+    // Print the year of birth of the 61st person (index 60)
+    printf("%d\n", people[60].year_of_birth);
+
+    // Free allocated memory
+    free(people);
+
+    return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char name[21];
+    char surname[21];
+    int year_of_birth;
+} Person;
+
+// Function to compare people for qsort
+int comparePeople(const void *a, const void *b) {
+    const Person *personA = (const Person *)a;
+    const Person *personB = (const Person *)b;
+
+    // Compare by surname lexicographically
+    int surnameComparison = strcmp(personA->surname, personB->surname);
+    if (surnameComparison != 0) {
+        return surnameComparison;
+    }
+
+    // If surname is the same, compare by name lexicographically
+    int nameComparison = strcmp(personA->name, personB->name);
+    if (nameComparison != 0) {
+        return nameComparison;
+    }
+
+    // If both surname and name are the same, sort by year of birth in descending order
+    return personB->year_of_birth - personA->year_of_birth;
+}
+
+int main() {
+    freopen("C:\\Users\\ASUS\\Downloads\\input(41) (1).txt","r",stdin);
+    int n;
+    scanf("%d", &n);
+
+    Person *people = (Person *)malloc(n * sizeof(Person));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %s %d", people[i].name, people[i].surname, &people[i].year_of_birth);
+    }
+
+    // Sort the people using qsort and the comparePeople function
+    qsort(people, n, sizeof(Person), comparePeople);
+
+    // Print the surname of the 61st person (index 60)
+    printf("%s\n", people[60].surname);
+
+    // Free allocated memory
+    free(people);
+
+    return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char name[21];
+    char surname[21];
+    int year_of_birth;
+} Person;
+
+// Function to compare people for qsort
+int comparePeople(const void *a, const void *b) {
+    const Person *personA = (const Person *)a;
+    const Person *personB = (const Person *)b;
+
+    // Compare by surname lexicographically
+    int surnameComparison = strcmp(personA->surname, personB->surname);
+    if (surnameComparison != 0) {
+        return surnameComparison;
+    }
+
+    // If surname is the same, compare by name lexicographically
+    int nameComparison = strcmp(personA->name, personB->name);
+    if (nameComparison != 0) {
+        return nameComparison;
+    }
+
+    // If both surname and name are the same, sort by year of birth in descending order
+    return personB->year_of_birth - personA->year_of_birth;
+}
+
+int main() {
+    freopen("C:\\Users\\ASUS\\Downloads\\input(41) (2).txt","r",stdin);
+    int n;
+    scanf("%d", &n);
+
+    Person *people = (Person *)malloc(n * sizeof(Person));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %s %d", people[i].name, people[i].surname, &people[i].year_of_birth);
+    }
+
+    // Sort the people using qsort and the comparePeople function
+    qsort(people, n, sizeof(Person), comparePeople);
+
+    // Print the name of the 61st person (index 60)
+    printf("%s\n", people[60].name);
+
+    // Free allocated memory
+    free(people);
+
+    return 0;
+}
+*/
+
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char name[21];
+    int solved_problems;
+    int penalty_time;
+    int team_number;
+} Team;
+
+// Function to compare teams for qsort
+int compareTeams(const void *a, const void *b) {
+    const Team *teamA = (const Team *)a;
+    const Team *teamB = (const Team *)b;
+
+    // Sort by the number of solved problems in descending order
+    if (teamB->solved_problems != teamA->solved_problems) {
+        return teamB->solved_problems - teamA->solved_problems;
+    }
+
+    // If the number of solved problems is equal, sort by penalty time in ascending order
+    if (teamA->penalty_time != teamB->penalty_time) {
+        return teamA->penalty_time - teamB->penalty_time;
+    }
+
+    // If all mentioned parameters are equal, sort by team number in ascending order
+    return teamA->team_number - teamB->team_number;
+}
+
+int main() {
+    freopen("C:\\Users\\ASUS\\Downloads\\input(42) (2).txt","r",stdin);
+    int n;
+    scanf("%d", &n);
+
+    Team *teams = (Team *)malloc(n * sizeof(Team));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%s %d %d", teams[i].name, &teams[i].solved_problems, &teams[i].penalty_time);
+        teams[i].team_number = i + 1; // Assign team number
+    }
+
+    // Sort the teams using qsort and the compareTeams function
+    qsort(teams, n, sizeof(Team), compareTeams);
+
+    // Print the penalty time of the 661st team (index 660)
+    printf("%d\n", teams[660].penalty_time);
+
+    // Free allocated memory
+    free(teams);
+
+    return 0;
+}
+
+
+*/
