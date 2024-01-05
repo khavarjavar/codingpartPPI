@@ -15,18 +15,18 @@ int compareTeams(const void *a, const void *b) {
     const Team *teamA = (const Team *)a;
     const Team *teamB = (const Team *)b;
 
-    // Sort by solved problems in descending order
+    // Sort by solved problems in descending order//descending olanda B'den A'yi cixiriq 
     if (teamB->solved_problems != teamA->solved_problems) {
         return teamB->solved_problems - teamA->solved_problems;
     }
 
-    // If solved problems are equal, sort by penalty time in ascending order
-    if (teamA->penalty_time != teamB->penalty_time) {
+    // If solved problems are equal, sort by penalty time in ascending order//ama bele artan sira deyende A'den B'ni
+  else  if (teamA->penalty_time != teamB->penalty_time) {  //burda else if vermeyim subheli cunnki if verende de yene eyni cur isleyir**********
         return teamA->penalty_time - teamB->penalty_time;
     }
 
     // If both are equal, sort by team number in ascending order
-    return teamA->team_number - teamB->team_number;
+ else   return teamA->team_number - teamB->team_number;
 }
 
 int main() {
