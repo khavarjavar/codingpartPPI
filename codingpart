@@ -1,8 +1,7 @@
-/<----------------------------SAMPLE QUIZ 12 CODING PART------------------------------------------->/
-
 /*
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct {
     char name[21];
     int solved_problems;
@@ -15,18 +14,18 @@ int compareTeams(const void *a, const void *b) {
     const Team *teamA = (const Team *)a;
     const Team *teamB = (const Team *)b;
 
-    // Sort by solved problems in descending order//descending olanda B'den A'yi cixiriq 
+    // Sort by solved problems in descending order
     if (teamB->solved_problems != teamA->solved_problems) {
         return teamB->solved_problems - teamA->solved_problems;
     }
 
-    // If solved problems are equal, sort by penalty time in ascending order//ama bele artan sira deyende A'den B'ni
-  else  if (teamA->penalty_time != teamB->penalty_time) {  //burda else if vermeyim subheli cunnki if verende de yene eyni cur isleyir**********
-        return teamA->penalty_time - teamB->penalty_time;
+    // If solved problems are equal, sort by penalty time in ascending order
+    if (teamA->penalty_time != teamB->penalty_time) {
+        return teamA->penalty_time - teamB->penalty_time;//return oldugu yerde is bitir else'e ehtiyac yoxdu
     }
 
     // If both are equal, sort by team number in ascending order
- else   return teamA->team_number - teamB->team_number;
+    return teamA->team_number - teamB->team_number;
 }
 
 int main() {
@@ -34,15 +33,16 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    Team *teams = (Team *)malloc(n * sizeof(Team));
+    Team *teams = (Team *)malloc(n * sizeof(Team));//icinde Team olan pointer hansi teams olacaq n'e vurmaqla
+// Team data type kimi int kimi baxiram
 
     for (int i = 0; i < n; i++) {
         scanf("%s %d %d", teams[i].name, &teams[i].solved_problems, &teams[i].penalty_time);
-        teams[i].team_number = i + 1; // Assign team number
+       teams[i].team_number = i + 1; // Assign team number
     }
 
     // Sort the teams using qsort and the compareTeams function
-    qsort(teams, n, sizeof(Team), compareTeams);
+    qsort(teams,n,sizeof(Team),compareTeams);
 
     // Print the number of solved problems for the 661-th team (index 660)
     printf("%d\n", teams[660].solved_problems);
@@ -111,7 +111,10 @@ int main() {
 }
 */
 
+
+
 /*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
